@@ -1,0 +1,12 @@
+#=========================== Filebeat inputs =============================
+filebeat.inputs:
+- type: log 
+  enabled: true
+  paths:
+    - C:/Users/youssra/Desktop/DATA/windows/eventlog.csv
+  
+
+
+#----------------------------- Logstash output --------------------------------
+output.logstash:
+  hosts: ["localhost:5044"]

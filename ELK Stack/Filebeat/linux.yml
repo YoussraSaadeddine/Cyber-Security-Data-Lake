@@ -1,0 +1,41 @@
+#=========================== Filebeat inputs =============================
+filebeat.inputs:
+ 
+- type: log
+
+  enabled: true
+  paths:
+    - C:/Users/youssra/Desktop/DATA/Linux/var/log/access/*.log
+   fields: {log_type: access}
+   
+- type: log
+ 
+  enabled: true
+  paths:
+    - C:Users/youssra/Desktop/DATA/Linux/var/log/error/*.log
+   fields: {log_type: error}
+  
+- type: log
+ 
+  enabled: true
+  paths:
+    - C:/Users/youssra/Desktop/DATA/Linux/var/log/maillog/*.log
+   fields: {log_type: maillog}
+  
+- type: log
+ 
+  enabled: true
+  paths:
+    - C:/Users/youssra/Desktop/DATA/Linux/var/log/secure/*.log
+   fields: {log_type: secure}
+
+- type: log
+ 
+  enabled: true
+  paths:
+    - C:/Users/youssra/Desktop/DATA/Linux/var/log/messages/*.log
+   fields: {log_type: messages}
+
+#----------------------------- Logstash output --------------------------------
+output.logstash:
+  hosts: ["localhost:5044"]
